@@ -1,8 +1,7 @@
 class MicropostsController < ApplicationController
   validates :content, length: { maximum: 140 }
-end
+end  
   before_action :set_micropost, only: [:show, :edit, :update, :destroy]
-
   # GET /microposts
   # GET /microposts.json
   def index
