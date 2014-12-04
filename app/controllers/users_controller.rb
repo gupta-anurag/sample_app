@@ -9,11 +9,11 @@ class UsersController < ApplicationController
   end
 
   def new
-    @users = User.new
+    @user = User.new
   end
 
   def create
-    @user = User.new(user_params)    # Not the final implementation!
+    @users = User.new(user_params)    # Not the final implementation!
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the Sampple App!"
