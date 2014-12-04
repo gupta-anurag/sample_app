@@ -31,5 +31,5 @@ class ActiveSupport::TestCase
     
     def integration_test?
       defined?(post_vai_redirect)
-     end 
+    end 
 end
