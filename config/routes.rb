@@ -31,6 +31,8 @@ Rails.application.routes.draw do
 
   delete 'logout' => 'sessions#destroy'
 
+  resources :account_activations, only: [:edit]
+
   # resources: users
 
   # The priority is based upon order of creation: first created -> highest priority.
