@@ -38,15 +38,16 @@ class User < ActiveRecord::Base
   end
 
   def activate
-    update_columns(activated: FILL_IN, activated_at: FILL_IN)
+    update_attribute(:activated,    true)
+    update_attribute(:activated_at, Time.zone.now)
   end
 
   def send_activation_email
-    UserMailer.account_activation(self).deliver_now
+    UserMailer.account_activation(self).deliver
   end  
 
   def create_reset_digest
-    sef.reset_token = User.new_token
+    self.reset_token = User.new_token
     update_columns(reset_digest: FILL_IN, reset_sent_at: FILL_IN)
   end
   

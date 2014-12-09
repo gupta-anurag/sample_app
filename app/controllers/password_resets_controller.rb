@@ -43,8 +43,7 @@ class PasswordResetsController < ApplicationController
 
     # Returns true if password & confirmation are blank.
     def both_passwords_blank?
-      params[:user][:password].blank? &&
-      params[:user][:password_confirmation].blank?
+      params[:user][:password].blank? && params[:user][:password_confirmation].blank?
     end
 
     # Before filters
