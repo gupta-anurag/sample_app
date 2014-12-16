@@ -10,5 +10,13 @@
   <%= @micropost.user_id %>
 </p>
 
+<h2>Comments</h2>
+<%= render @micropost.comments %>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+
+<br />
+
 <%= link_to 'Edit', edit_micropost_path(@micropost) %> |
 <%= link_to 'Back', microposts_path %>
