@@ -1,5 +1,5 @@
 class MicropostsController < ApplicationController
-  http_basic_authenticate_with :name => "dhh", :password => "secret", :only => :destroy
+  # http_basic_authenticate_with :name => "dhh", :password => "secret", :only => :destroy
   # before_action :authenticate_user!
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: :destroy

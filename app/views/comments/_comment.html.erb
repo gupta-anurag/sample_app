@@ -1,13 +1,12 @@
-<p>
-  <b>Commenter:</b>
-  <%= comment.commenter %>
-</p>
- 
-<p>
-  <b>Comment:</b>
-  <%= comment.body %>
-</p>
-
-<p>
-  <%= link_to 'Destroy Comment', [comment.post, comment], :confirm => 'Are you sure?', :method => :delete %>
-</p>
+<%= form_for Comment.new do |f| %>
+  <div class="field">
+    <%= f.label :commenter %><br />
+    <%= f.text_field :commenter %>
+  </div>
+  <%= hidden_field_tag :micropost_id, micropost.id %>
+  <%#= hidden_field_tag :comment_id, comment.id %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<%= "jkfjgvjekbv" %>

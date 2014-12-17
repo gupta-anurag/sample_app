@@ -35,15 +35,17 @@ Rails.application.routes.draw do
 
   delete 'logout' => 'sessions#destroy'
 
+  # get 'comments-path'
+
   resources :account_activations, only: [:edit]
 
   resources :password_resets, only: [:new, :create, :edit, :update]
 
   resources :microposts, only: [:create, :destroy]
 
-  resources :microposts do
-    resources :comments
-  end  
+  # resources :microposts do
+  resources :comments, only: [:create, :destroy]
+  # end  
   # resources: users
 
   # The priority is based upon order of creation: first created -> highest priority.
