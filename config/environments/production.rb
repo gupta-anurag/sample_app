@@ -70,8 +70,8 @@ Rails.application.configure do
     domain: "heroku.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "anurag19gupta",
-    password: "komalanurag19#"
+    user_name: "rubyrails19@gmail.com"
+    password: "anurag19#"
 
   # config.action_mailer.raise_delivery_errors = true
   # config.action_mailer.delivery_method = :smtp

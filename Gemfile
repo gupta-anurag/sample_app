@@ -56,6 +56,8 @@ gem 'bootstrap-sass'
 gem 'bcrypt'
 gem "bcrypt-ruby", :require => "bcrypt"
 
+# gem 'figaro'
+
 gem 'faker'                   
  gem 'carrierwave',             '0.10.0'
 gem 'mini_magick',             '3.8.0'
