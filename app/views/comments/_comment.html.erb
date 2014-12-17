@@ -1,7 +1,7 @@
 <%= form_for Comment.new do |f| %>
   <div class="field">
-    <%= f.label :commenter %><br />
-    <%= f.text_field :commenter %>
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
   </div>
   <%= hidden_field_tag :micropost_id, micropost.id %>
   <%#= hidden_field_tag :comment_id, comment.id %>
@@ -9,4 +9,9 @@
     <%= f.submit %>
   </div>
 <% end %>
-<%= "jkfjgvjekbv" %>
+<% comment = Comment.where(micropost_id: micropost.id)%>
+<% unless comment.nil? %>
+<% comment.each do|comnt|%>
+  <%= comnt.content%>
+ <% end %> 
+ <% end %>

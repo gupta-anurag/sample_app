@@ -22,4 +22,19 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
+  <span><a class="like-Unlike" href="micropost_id">Like</a></span>
+<script>
+function LikeUnLikeButton() {
+            $(".like-Unlike").click(function (e) {
+                if ($(this).html() == "Like") {
+                    $(this).html('Unlike');
+                }
+                else {
+                    $(this).html('Like');
+                }
+            });
+        }
+LikeUnLikeButton();
+</script>
 <% end %>

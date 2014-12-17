@@ -12,10 +12,13 @@ class CommentsController < ApplicationController
   end  
 
   def create
+    logger.debug "55555555555555"
+    logger.debug params.inspect
     @micropost = Micropost.find(params[:micropost_id])
     @comment = Comment.create(comment_params)
+    @comment.micropost_id = params[:micropost_id]
     if @comment.save
-      redirect_to micropost_path(@micropost)
+      redirect_to root_url
     end
   end  
 
@@ -29,7 +32,7 @@ class CommentsController < ApplicationController
 
   private
     def comment_params
-      params.require(:comment).permit(:content)
+      params.require(:comment).permit(:content, :picture)
     end
 
 end

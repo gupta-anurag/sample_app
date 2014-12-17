@@ -6,8 +6,8 @@ class MicropostsController < ApplicationController
 
   def index
     @microposts = Micropost.all
-     # @comment = @micropost.comments.build(params[:comment])
-     # @comment.user = current_user
+     @comment = @micropost.comments.build(params[:comment])
+     @comment.user = current_user
   end  
   
   def create
