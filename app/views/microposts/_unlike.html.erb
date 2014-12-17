@@ -1,0 +1,5 @@
+<%= form_for(current_user.appreciations.find_by_liked_id(@post), 
+                               :html => { :method => :delete },
+                               :remote => true) do |f| %>
+<div class="actions"><%= f.submit "Unlike" %></div>
+<% end %>
