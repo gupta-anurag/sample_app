@@ -5,11 +5,15 @@ source 'http://rubygems.org'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
 # group :development do
-#  gem 'sqlite3'
 
+<<<<<<< HEAD
 # group :development, :test do 
 #  gem 'sqlite3'
 # end
+=======
+
+# gem 'act as votable'
+>>>>>>> user-comments
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -27,7 +31,10 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sdoc', '~> 0.4.0'
+
+gem 'pg', '~> 0.18.0.pre20141117110243'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -47,6 +54,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'pg', '~> 0.18.0.pre20141117110243'
 
 group :production do
+<<<<<<< HEAD
+=======
+  gem 'pg', '~> 0.18.0.pre20141117110243'
+
+>>>>>>> user-comments
   # gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
 end            
@@ -55,12 +67,15 @@ gem 'bootstrap-sass'
 gem 'bcrypt'
 gem "bcrypt-ruby", :require => "bcrypt"
 
+# gem 'figaro'
+
 gem 'faker'                   
-gem 'carrierwave',             '0.10.0'
+ gem 'carrierwave',             '0.10.0'
 gem 'mini_magick',             '3.8.0'
-gem 'fog',                     '1.23.0'
+ gem 'fog',                     '1.23.0'
 gem 'will_paginate',           '3.0.7'          
 gem 'bootstrap-will_paginate', '0.0.10'
+
 
 group :test do
   gem 'minitest-reporters', '1.0.5'

@@ -4,16 +4,25 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
    
   def index
-    logger.debug "222222222222222222222"
-    @users = User.where(activated: FILL_IN).paginate(page: params[:page])
+    @users = User.paginate(page: params[:page])
   end 
    
   def show
-    logger.debug "111111111111111111111111"
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])    
-   end
-
+    comments = Comment.new 
+    # @comments = @micropost.comments
+       
+    if logged_in?
+      @micropost = current_user.microposts.build
+      @feed_items = current_user.feed
+    end
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml { render :xml => @user}
+    end
+  end
+    
   def new
     @user = User.new
   end
