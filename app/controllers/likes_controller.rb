@@ -4,4 +4,5 @@ class LikesController < ApplicationController
   	@micropost = Micropost.find(params[:micropost])
   	@like = micropost.likes.build(:micropost_id, micropost_id)
   	@like.save
+end  	
 end
