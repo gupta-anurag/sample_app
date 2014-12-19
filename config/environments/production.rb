@@ -72,7 +72,7 @@ Rails.application.configure do
     enable_starttls_auto: true,
     user_name: "rubyonrails19@gmail.com",
     password: "1991anurag1991#"
-
+}
   # config.action_mailer.raise_delivery_errors = true
   # config.action_mailer.delivery_method = :smtp
   # host = 'sample-app012345.herokuapp.com'
