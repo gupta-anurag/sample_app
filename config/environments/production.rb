@@ -73,19 +73,7 @@ Rails.application.configure do
     user_name: "guptasourabh03@gmail.com",
     password: "Ssourabh123"
   }
-  # config.action_mailer.raise_delivery_errors = true
-  # config.action_mailer.delivery_method = :smtp
-  # host = 'sample-app012345.herokuapp.com'
-  # config.action_mailer.default_url_options = { :host => 'sample-app012345.herokuapp.com' }
-  # ActionMailer::Base.smtp_settings = {
-  #   :address        => 'smtp.sendgrid.net',
-  #   :port           => '587',
-  #   :authentication => :plain,
-  #   :user_name      => "anurag19gupta@gamil.com"
-  #   :password       => "komalanurag19#"
-  #   :domain         => 'sample-app012345.herokuapp.com',
-  #   :enable_starttls_auto => true
-  # }
+ 
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
