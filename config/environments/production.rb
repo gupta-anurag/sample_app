@@ -70,7 +70,7 @@ Rails.application.configure do
     domain: "herokuapp.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "rubyonrails19@gmail.com"
+    user_name: "rubyonrails19@gmail.com",
     password: "1991anurag1991#"
 
   # config.action_mailer.raise_delivery_errors = true
