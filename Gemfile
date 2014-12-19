@@ -7,9 +7,9 @@ gem 'rails', '4.1.8'
 # group :development do
 #  gem 'sqlite3'
 
-group :development, :test do 
- gem 'sqlite3'
-end
+# group :development, :test do 
+#  gem 'sqlite3'
+# end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -44,8 +44,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
+gem 'pg', '~> 0.18.0.pre20141117110243'
+
 group :production do
-  gem 'pg',             '0.17.1'
+  # gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
 end            
 gem 'bootstrap-sass'    
