@@ -6,14 +6,11 @@ gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
 # group :development do
 
-<<<<<<< HEAD
 # group :development, :test do 
 #  gem 'sqlite3'
 # end
-=======
 
 # gem 'act as votable'
->>>>>>> user-comments
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -51,14 +48,12 @@ gem 'pg', '~> 0.18.0.pre20141117110243'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
-gem 'pg', '~> 0.18.0.pre20141117110243'
+# gem 'pg', '~> 0.18.0.pre20141117110243'
 
 group :production do
-<<<<<<< HEAD
-=======
   gem 'pg', '~> 0.18.0.pre20141117110243'
+end
 
->>>>>>> user-comments
   # gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
 end            
