@@ -67,7 +67,7 @@ Rails.application.configure do
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "rubyrails19@gmail.com",
-    password: "anurag1991#"
+    password: "1991anurag1991#"
 
   }
   # Ignore bad email addresses and do not raise email delivery errors.
