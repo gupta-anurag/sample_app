@@ -32,6 +32,21 @@ class MicropostsController < ApplicationController
     comment.count
   end
 
+  def like
+      @like = Like.new()
+      @like.micropost_id = params[:micropost_id]
+      if @like.save
+        redirect_to root_url
+      end         
+  end  
+  
+  def unlike
+      @like = Like.find_by(micropost_id: params[:micropost_id])
+      if @like.delete
+        redirect_to root_url
+      end  
+  end 
+
   private
 
     def micropost_params

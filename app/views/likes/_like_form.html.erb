@@ -1,0 +1,4 @@
+<%= form_tag likes_path, :remote => true, :class => "like_micropost" do %>  
+   <%= hidden_field_tag :micropost, micropost.id %>
+       <%= submit_tag '', :class => "likeMicropostSubmit"  %> 
+<% end %>

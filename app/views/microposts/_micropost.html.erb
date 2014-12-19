@@ -9,10 +9,45 @@
     Posted <%= time_ago_in_words(micropost.created_at) %> ago.
     <% if current_user?(micropost.user) %>
       <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" } %>
-      <%= render 'microposts/like' %>
+      <% like = Like.find_by(micropost_id: micropost.id)%>
+      <% if like.nil? %>
+         <span><a id="like-Unlike_<%= micropost.id %>" href="#" onclick="LikeUnLikeButton(<%= micropost.id %>
+      )">Like</a></span>
+      <%else%> 
+         <span><a id="like-Unlike_<%= micropost.id %>" href="#" onclick="LikeUnLikeButton(<%= micropost.id %>
+      )">Unlike</a></span>
+      <%end%>
       <%= render 'comments/comment', micropost: micropost  %>
+
     <% end %>
 
   </span>
   </li>
   
+
+  <script>
+    function LikeUnLikeButton(micropost_id) {
+                
+                    if ($("#like-Unlike_"+micropost_id).html() == "Like") {
+                        $("#like-Unlike_"+micropost_id).html('Unlike');
+                           $.ajax({
+                                     url: "/like",
+                                     data: {micropost_id: micropost_id},
+                                     success: function(data) {
+                                         // ... do stuff here
+                                     }
+                                 });
+                    }
+                    else {
+                        $("#like-Unlike_"+micropost_id).html('Like');
+                        $.ajax({
+                                     url: "/unlike",
+                                     data: {micropost_id: micropost_id},
+                                     success: function(data) {
+                                         // ... do stuff here
+                                     }
+                                 });
+                    
+                }
+            }
+</script>

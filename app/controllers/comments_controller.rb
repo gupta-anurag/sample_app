@@ -28,7 +28,21 @@ class CommentsController < ApplicationController
     @comment.destroy
     redirect_to micropost_path(@micropost)
   end
-
+  
+   def commentlike
+      @like = CommentLike.new()
+      @like.comment_id = params[:comment_id]
+      if @like.save
+        redirect_to root_url
+      end         
+  end  
+  
+  def commentunlike
+      @like = CommentLike.find_by(comment_id: params[:comment_id])
+      if @like.delete
+        redirect_to root_url
+      end       
+  end 
 
   private
     def comment_params

@@ -1,6 +1,6 @@
 class Micropost < ActiveRecord::Base
   belongs_to :user
-  has_many :likes, :as => :likable
+  has_many :likes
   has_many :comments, :as => :comment
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader

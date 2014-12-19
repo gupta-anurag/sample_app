@@ -4,14 +4,53 @@
     <%= f.text_field :content %>
   </div>
   <%= hidden_field_tag :micropost_id, micropost.id %>
-  <%#= hidden_field_tag :comment_id, comment.id %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.submit class: "btn-btn-default" %>
 <% end %>
+
+
+
+<label>Comments:</label><br>
 <% comment = Comment.where(micropost_id: micropost.id)%>
 <% unless comment.nil? %>
-<% comment.each do|comnt|%>
-  <%= comnt.content%>
- <% end %> 
+	<% comment.each do|comnt|%>
+	<div class="content">
+	  <%= comnt.content%>
+	    <% like = CommentLike.find_by(comment_id: comnt.id)%>
+	      <% if like.nil? %>
+	         <span><a id="like-Unlike-comment_<%= comnt.id %>" href="#" onclick="CommentLikeUnLikeButton(<%= comnt.id %>
+	      )">Like</a></span>
+	      <%else%> 
+	         <span><a id="like-Unlike-comment_<%= comnt.id %>" href="#" onclick="CommentLikeUnLikeButton(<%= comnt.id %>
+	      )">Unlike</a></span>
+	      <%end%><br>
+	  <%#= render 'microposts/like' %>
+	 </div>
+	 <% end %> 
  <% end %>
+
+<script>
+    function CommentLikeUnLikeButton(comment_id) {
+                
+                    if ($("#like-Unlike-comment_"+comment_id).html() == "Like") {
+                        $("#like-Unlike-comment_"+comment_id).html('Unlike');
+                           $.ajax({
+                                     url: "/commentlike",
+                                     data: {comment_id: comment_id},
+                                     success: function(data) {
+                                         // ... do stuff here
+                                     }
+                                 });
+                    }
+                    else {
+                        $("#like-Unlike-comment_"+comment_id).html('Like');
+                        $.ajax({
+                                     url: "/commentunlike",
+                                     data: {comment_id: comment_id},
+                                     success: function(data) {
+                                         // ... do stuff here
+                                     }
+                                 });
+                    
+                }
+            }
+</script>

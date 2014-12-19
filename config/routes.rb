@@ -43,8 +43,16 @@ Rails.application.routes.draw do
 
   resources :microposts, only: [:create, :destroy]
 
+  get 'like' => 'microposts#like'
+  get 'unlike' => 'microposts#unlike'
+
+  
+
   # resources :microposts do
   resources :comments, only: [:create, :destroy]
+
+  get 'commentlike' => 'comments#commentlike'
+  get 'commentunlike' => 'comments#commentunlike'
   # end  
   # resources: users
 
