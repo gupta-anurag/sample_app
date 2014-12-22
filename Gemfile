@@ -48,7 +48,7 @@ gem 'pg', '~> 0.18.0.pre20141117110243'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
-gem 'pg', '~> 0.18.0.pre20141117110243'
+# gem 'pg', '~> 0.18.0.pre20141117110243'
 
 group :production do
   # gem 'pg', '~> 0.18.0.pre20141117110243'
