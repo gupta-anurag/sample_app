@@ -1,9 +1,11 @@
-<%= form_for Comment.new do |f| %>
+<li>
+  <%= form_for Comment.new do |f| %>
   <div class="field">
     <%= f.label :content %><br />
     <%= f.text_field :content %>
   </div>
   <%= hidden_field_tag :micropost_id, micropost.id %>
+  <%#= hidden_field_tag :user_id, user_id %>
   <%= f.submit class: "btn-btn-default" %>
 <% end %>
 
@@ -23,7 +25,6 @@
 	         <span><a id="like-Unlike-comment_<%= comnt.id %>" href="#" onclick="CommentLikeUnLikeButton(<%= comnt.id %>
 	      )">Unlike</a></span>
 	      <%end%><br>
-	  <%#= render 'microposts/like' %>
 	 </div>
 	 <% end %> 
  <% end %>

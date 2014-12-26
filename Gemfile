@@ -32,7 +32,7 @@ gem 'sdoc', '~> 0.4.0'
 
 gem 'pg', '~> 0.18.0.pre20141117110243'
 
-
+gem 'acts_as_votable', '~> 0.10.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

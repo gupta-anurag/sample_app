@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy
   # has_many :comments
+  has_many :likes
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
@@ -50,8 +51,7 @@ class User < ActiveRecord::Base
   def create_reset_digest
     self.reset_token = User.new_token
     update_attribute(:reset_digest,  User.digest(reset_token))
-    update_attribute(:reset_sent_at, Time.zone.now)
-
+    #update_attribute(:reset_sent_at, Time.zone.now)
   end
   
   def send_password_reset_email
@@ -65,7 +65,15 @@ class User < ActiveRecord::Base
   def feed
     Micropost.where("user_id = ?", id)
   end  
-     
+   
+  # def user_likes(current_user, micropost_id)
+  #   likes.find(:first, :conditions => ['user_id = ? AND micropost_id = ?', current_user, micropost_id]).nil ?
+  # end  
+
+  # def already_likes?(mciropost)
+  #   self.likes.find(:all, :conditions => ['micropost_id = ?', micropost_id]).size > 0
+  # end  
+ 
   private
 
     # Converts email to all lower-case.

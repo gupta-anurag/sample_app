@@ -1,5 +1,41 @@
 <%= form_for(current_user.appreciations.find_by_liked_id(@post), 
                                :html => { :method => :delete },
                                :remote => true) do |f| %>
-<div class="actions"><%= f.submit "Unlike" %></div>
+<div class="actions"><%#= f.submit "Unlike" %></div>
 <% end %>
+ 
+ <!-- <sapn><a class="like-Unlike" href="#">Like</a></sapn>
+<script> 
+ function unlike(,micropost_id,user_id,default_count)
+{
+            if( default_count == 1 ) {
+             var new_count= '0';
+             var link = 'like(\'' + micropost_id + '\',\'' + user_id + '\',\'' + default_count + '\',\'' + not_like + '\')\;';
+             jQuery('.likes').html('');
+            } else {
+             var new_count = parseInt(default_count) - 1;
+               if ( jQuery('.like-user').length  && default_count > 1 ) {
+                   var name = jQuery('.like-user').html();
+                   var link = 'like(\'' + micropost_id + '\',\'' + user_id + '\',\'' + new_count + '\')\;';
+                   jQuery('.likes').html('<span class="like-user">'  + name + '</span> like this.');
+
+               } else {
+                   var link = 'like(\'' + micropost_id + '\',\'' + user_id + '\',\'' + new_count + '\')\;';
+                   jQuery('.likes').html('<span class="like-user"><a href="#">'  + new_count + ' people</a></span> like this.');
+
+               }
+            }
+             jQuery('.like_click').attr('onclick',link);
+             jQuery('.like_click span').html('Like');
+    jQuery.ajax({
+        url: "/unlike",
+        // type: 'POST',
+        data: { micropost_id: micropost_id, user_id: user_id, type: 'unlike', count: default_count },
+        dataType: 'json', 
+        success: function(data)
+        {
+             // jQuery('#' + object_id + '_count').html(data.total);
+        }
+    });
+}
+</script> -->
